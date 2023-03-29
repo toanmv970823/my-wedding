@@ -19,9 +19,13 @@ func main() {
     r.Static("/static", "resources/static")
     r.LoadHTMLGlob("resources/*.html")
 
+
+
     r.GET("/", func(c *gin.Context) {
         c.HTML(http.StatusOK, "index.html", gin.H{
             "title": "Home Page",
+            "storage_url": "https://ik.imagekit.io/ugivvozi5c",
+            "static_path": "/static",
         })
     })
 
